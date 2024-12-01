@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+  <link rel="stylesheet" href="./styles.css">
+  
+  <title>Frontend Mentor | IP Address Tracker</title>
+
+</head>
+<body class="grid place-items-center max-w-6xl w-full my-14 mx-auto font-body">
+
+    <section class="bg-desktopPattern w-full h-60">
+        <header class="text-gray-200 text-3xl mt-6 text-center">
+            <h2>IP Address Tracker</h2>
+        </header>
+    
+        <form class="flex justify-center items-center my-7">
+            <label for="address"></label>
+            <input type="text" name="address" placeholder="Search for any IP address or domain" class="search-input">
+            <img src="/images/icon-arrow.svg" alt="icon-arrow" class="icon-arrow">
+        </form>
+    </section>
+  
+    <div class="wrapper">
+        <div class="ip">
+            <p>IP Address</p>
+            <span class="text">192.168.10.10</span>
+        </div>
+
+        <div class="location px-7 border-l-2 border-gray-300">
+            <p>Location</p>
+            <span class="text">Dodoma</span>
+        </div>
+
+        <div class="timezone px-7 border-l-2 border-gray-300">
+            <p>Timezone</p>
+            <span class="text">UTC <!-- add offset value dynamically using the API --></span>
+        </div>
+
+        <div class="isp px-7 border-l-2 border-gray-300">
+            <p>ISP</p>
+            <span class="text">Space X</span>
+        </div>
+    </div>
+
+    <div class="w-full map">
+        <div id="map" class="h-heightMap w-fullWidth relative z-20"></div>
+    </div>
+   
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-tertiary">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/okedo01">Eliah &copy;right<span class="year"></span></a>.
+  </div>
+
+  <script src="./scripts/map.js"></script>
+  <script src="./scripts/tracker.js"></script>
+  <script src="./scripts/updateTime.js"></script>
+</body>
+</html>
