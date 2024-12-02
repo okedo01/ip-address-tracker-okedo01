@@ -66,6 +66,9 @@ userInput.addEventListener('submit', event => {
     // get user input
     const address = userInput.address.value.trim();
     userInput.reset();
+
+    // localStorage
+    localStorage.setItem("address", address);
     
     updateAddress(address)
     .then(data => updateUI(data))
@@ -81,3 +84,14 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.marker([51.5, -0.09]).addTo(map)
     .bindPopup('A pretty CSS popup.<br> Easily customizable.')
     .openPopup();
+
+// checking if the address is located in localStorage
+if(localStorage.getItem("address")) {
+    updateAddress(localStorage.getItem("address"))
+        .then(data => updateUI(data))
+        .catch(error => console.log(error.message));
+} else {
+    console.log("do not exist");
+    
+}
+
