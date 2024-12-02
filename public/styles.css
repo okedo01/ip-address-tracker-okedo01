@@ -564,19 +564,17 @@ video {
   z-index: 20;
 }
 
-.mx-auto{
-  margin-left: auto;
-  margin-right: auto;
+.my-3{
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
-.my-14{
-  margin-top: 3.5rem;
-  margin-bottom: 3.5rem;
+.mb-2{
+  margin-bottom: 0.5rem;
 }
 
-.my-7{
-  margin-top: 1.75rem;
-  margin-bottom: 1.75rem;
+.mb-3{
+  margin-bottom: 0.75rem;
 }
 
 .mt-6{
@@ -587,16 +585,24 @@ video {
   display: flex;
 }
 
-.grid{
-  display: grid;
-}
-
 .h-60{
   height: 15rem;
 }
 
+.h-\[40px\]{
+  height: 40px;
+}
+
 .h-heightMap{
   height: 400px;
+}
+
+.h-\[60px\]{
+  height: 60px;
+}
+
+.h-\[70px\]{
+  height: 70px;
 }
 
 .w-full{
@@ -605,14 +611,6 @@ video {
 
 .w-fullWidth{
   width: 100%;
-}
-
-.max-w-6xl{
-  max-width: 72rem;
-}
-
-.place-items-center{
-  place-items: center;
 }
 
 .items-center{
@@ -625,6 +623,10 @@ video {
 
 .border-l-2{
   border-left-width: 2px;
+}
+
+.border-none{
+  border-style: none;
 }
 
 .border-gray-300{
@@ -645,13 +647,13 @@ video {
   text-align: center;
 }
 
-.font-body{
-  font-family: Rubik, sans-serif;
-}
-
 .text-3xl{
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.uppercase{
+  text-transform: uppercase;
 }
 
 .text-gray-200{
@@ -664,8 +666,32 @@ video {
   color: hsl(228 45% 44% / var(--tw-text-opacity));
 }
 
+body{
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  width: 100%;
+  max-width: 36rem;
+  place-items: center;
+  font-family: Rubik, sans-serif;
+}
+
+@media (min-width: 768px){
+  body{
+    max-width: 48rem;
+  }
+}
+
+@media (min-width: 1024px){
+  body{
+    max-width: 72rem;
+  }
+}
+
 .text{
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 700;
   --tw-text-opacity: 1;
@@ -674,38 +700,85 @@ video {
 
 .wrapper{
   position: absolute;
-  top: 15rem;
+  top: 12rem;
   z-index: 50;
-  display: flex;
+  display: grid;
   width: 100%;
-  max-width: 56rem;
-  align-items: center;
-  justify-content: space-around;
+  max-width: 18rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  justify-items: center;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+  padding-left: 1.25rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   --tw-text-opacity: 1;
   color: hsl(0 0% 17% / var(--tw-text-opacity));
 }
 
+@media (min-width: 640px){
+  .wrapper{
+    top: 14rem;
+    max-width: 32rem;
+  }
+}
+
+@media (min-width: 768px){
+  .wrapper{
+    top: 15rem;
+    max-width: 36rem;
+  }
+}
+
+@media (min-width: 1024px){
+  .wrapper{
+    max-width: 56rem;
+  }
+}
+
+@media (min-width: 640px){
+  .responsive{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px){
+  .responsive{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 .search-input{
-  width: 28rem;
+  width: 16rem;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding: 1rem;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  padding: 0.75rem;
+  font-size: 12px;
   font-weight: 600;
   --tw-text-opacity: 1;
   color: hsl(0 0% 59% / var(--tw-text-opacity));
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+@media (min-width: 640px){
+  .search-input{
+    width: 20rem;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1024px){
+  .search-input{
+    width: 28rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
 
 .icon-arrow{
@@ -714,14 +787,40 @@ video {
   border-bottom-right-radius: 1rem;
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+@media (min-width: 640px){
+  .icon-arrow{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px){
+  .icon-arrow{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
 
 .attribution{
   margin-top: 2.5rem;
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
+}
+
+@media (min-width: 640px){
+  .sm\:my-7{
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px){
+  .lg\:text-start{
+    text-align: start;
+  }
 }

@@ -20,7 +20,7 @@ module.exports = {
 
       fontSize: {
         input: '18px',
-        footerText: '11px'
+        footerText: '12px'
       },
 
       width: {

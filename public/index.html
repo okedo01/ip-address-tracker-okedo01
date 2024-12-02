@@ -15,39 +15,40 @@
   <title>Frontend Mentor | IP Address Tracker</title>
 
 </head>
-<body class="grid place-items-center max-w-6xl w-full my-14 mx-auto font-body">
+<body>
 
     <section class="bg-desktopPattern w-full h-60">
         <header class="text-gray-200 text-3xl mt-6 text-center">
             <h2>IP Address Tracker</h2>
         </header>
     
-        <form class="flex justify-center items-center my-7">
+        <form class="flex justify-center items-center my-3 sm:my-7">
             <label for="address"></label>
             <input type="text" name="address" placeholder="Search for any IP address or domain" class="search-input">
             <img src="/images/icon-arrow.svg" alt="icon-arrow" class="icon-arrow">
         </form>
     </section>
   
-    <div class="wrapper">
-        <div class="ip">
-            <p>IP Address</p>
-            <span class="text">192.168.10.10</span>
+    <div class="wrapper responsive">
+        <div class="ip mb-2 px-7 text-center lg:text-start">
+            <h3 class="uppercase">IP Address</h3>
+            <p class="text">192.212.174.101</p>
         </div>
 
-        <div class="location px-7 border-l-2 border-gray-300">
-            <p>Location</p>
-            <span class="text">Dodoma</span>
+        
+        <div class="location mb-3 px-7 h-[70px] border-l-2 text-center lg:text-start">
+            <h3 class="uppercase">Location</h3>
+            <p class="text">Brooklyn, NY 10001</p>
         </div>
 
-        <div class="timezone px-7 border-l-2 border-gray-300">
-            <p>Timezone</p>
-            <span class="text">UTC <!-- add offset value dynamically using the API --></span>
+        <div class="timezone px-7 h-[70px] border-l-2 text-center lg:text-start">
+            <h3 class="uppercase">Timezone</h3>
+            <p class="text">UTC <span>-05:00</span> <!-- add offset value dynamically using the API --></p>
         </div>
 
-        <div class="isp px-7 border-l-2 border-gray-300">
-            <p>ISP</p>
-            <span class="text">Space X</span>
+        <div class="isp px-7 h-[70px] border-l-2 text-center lg:text-start">
+            <h3 class="uppercase">isp</h3>
+            <p class="text">Space X StarLink</p>
         </div>
     </div>
 
@@ -57,7 +58,7 @@
    
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-tertiary">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/okedo01">Eliah &copy;right<span class="year"></span></a>.
+    Coded by <a href="https://github.com/okedo01">Eliah &copy;right <span class="year"></span></a>.
   </div>
 
   <script src="./scripts/map.js"></script>

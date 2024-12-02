@@ -14,7 +14,7 @@ const updateUI = (data) => {
 
         <div class="location px-7 border-l-2 border-gray-300">
             <p>Location</p>
-            <span class="text">${addressDetails.location.region}</span>
+            <span class="text">${addressDetails.location.city}, ${addressDetails.location.region}</span>
         </div>
 
         <div class="timezone px-7 border-l-2 border-gray-300">
@@ -29,12 +29,26 @@ const updateUI = (data) => {
     `;
 
     // update the map
+    // Assume addressDetails is already defined and includes location details
     const latitude = addressDetails.location.lat;
     const longitude = addressDetails.location.lng;
 
-     map.setView([latitude, longitude], 13); 
-     marker.setLatLng([latitude, longitude]).addTo(map) 
-    .bindPopup(`Location: ${addressDetails.location.city}, ${addressDetails.location.region}`).openPopup();
+    // Set the map view to the new coordinates
+    map.setView([latitude, longitude], 13);
+
+    // Check if the marker has already been created
+    if (!window.marker) {
+        // Initialize the marker and add it to the map
+        window.marker = L.marker([latitude, longitude]).addTo(map)
+            .bindPopup(`Location: ${addressDetails.location.city}, ${addressDetails.location.region}`)
+            .openPopup();
+    } else {
+        // Update the position of the existing marker
+        window.marker.setLatLng([latitude, longitude])
+            .bindPopup(`Location: ${addressDetails.location.city}, ${addressDetails.location.region}`)
+            .openPopup();
+    }
+
 }
 
 const updateAddress = async (address) => {
