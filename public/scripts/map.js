@@ -48,7 +48,6 @@ const updateUI = (data) => {
             .bindPopup(`Location: ${addressDetails.location.city}, ${addressDetails.location.region}`)
             .openPopup();
     }
-
 }
 
 const updateAddress = async (address) => {
@@ -71,8 +70,9 @@ userInput.addEventListener('submit', event => {
     localStorage.setItem("address", address);
     
     updateAddress(address)
-    .then(data => updateUI(data))
-    .catch(error => console.log(error));
+    // .then(data => updateUI(data))
+    .then(data => console.log(data))
+    .catch(error => alert(error.message));
 })
 
 var map = L.map('map').setView([51.505, -0.09], 13);

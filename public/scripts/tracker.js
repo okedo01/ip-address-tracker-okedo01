@@ -19,5 +19,4 @@ const getData = async (address) => {
     //     },
 
     return data;
-
 }
