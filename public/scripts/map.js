@@ -58,9 +58,9 @@ userInput.addEventListener('submit', event => {
     userInput.reset();
 
     // localStorage
-    localStorage.setItem("input", input);
+    localStorage.setItem("address", input);
     
-    tracker.updateAddress(input)
+    tracker.updateAddress(input, isDomain(input))
     .then(data => updateUI(data))
     .catch(error => alert(error.message));
 })
@@ -75,13 +75,39 @@ L.marker([51.5, -0.09]).addTo(map)
     .bindPopup('A pretty CSS popup.<br> Easily customizable.')
     .openPopup();
 
+
+// Use browser geolocation if available
+const useBrowserLocation = () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const { latitude, longitude } = position.coords;
+                map.setView([latitude, longitude], 15);
+                if (!window.marker) {
+                    window.marker = L.marker([latitude, longitude]).addTo(map)
+                        .bindPopup('Your current location')
+                        .openPopup();
+                } else {
+                    window.marker.setLatLng([latitude, longitude])
+                        .bindPopup('Your current location')
+                        .openPopup();
+                }
+            },
+            (error) => {
+                console.error(`Geolocation Error: ${error.message}`);
+            }
+        );
+    } else {
+        console.warn('Geolocation is not supported by this browser.');
+    }
+};
+
 // checking if the address is located in localStorage
-if(localStorage.getItem("input")) {
-    tracker.updateAddress(localStorage.getItem("input"))
+if(localStorage.getItem("address")) {
+    tracker.updateAddress(localStorage.getItem("address")), isDomain(localStorage.getItem("address"))
         .then(data => updateUI(data))
         .catch(error => console.log(error.message));
 } else {
-    console.log("do not exist");
-    
+    useBrowserLocation();
 }
 
