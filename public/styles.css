@@ -610,7 +610,7 @@ video {
 }
 
 .bg-desktopPattern{
-  background-image: url('/images/pattern-bg-desktop.png');
+  background-image: url('/public/images/pattern-bg-desktop.png');
 }
 
 .px-7{

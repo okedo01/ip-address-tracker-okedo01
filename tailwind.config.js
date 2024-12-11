@@ -13,7 +13,8 @@ module.exports = {
       },
 
       backgroundImage: {
-        desktopPattern: "url('/images/pattern-bg-desktop.png')",
+        // desktopPattern: "url('/images/pattern-bg-desktop.png')",
+        desktopPattern: "url('/public/images/pattern-bg-desktop.png')",
         mobikePattern: "url('/images/pattern-bg-mobile.png')"
       },
 
