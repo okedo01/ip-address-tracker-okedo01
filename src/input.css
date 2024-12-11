@@ -25,3 +25,6 @@ body {
 .attribution {
     @apply text-center text-footerText mt-10;
 }
+.attribution a {
+    @apply text-tertiary;
+}

@@ -589,10 +589,6 @@ video {
   height: 15rem;
 }
 
-.h-\[70px\]{
-  height: 70px;
-}
-
 .h-heightMap{
   height: 400px;
 }
@@ -798,6 +794,11 @@ body{
   margin-top: 2.5rem;
   text-align: center;
   font-size: 12px;
+}
+
+.attribution a{
+  --tw-text-opacity: 1;
+  color: hsl(228 45% 44% / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px){
