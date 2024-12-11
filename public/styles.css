@@ -589,20 +589,12 @@ video {
   height: 15rem;
 }
 
-.h-\[40px\]{
-  height: 40px;
+.h-\[70px\]{
+  height: 70px;
 }
 
 .h-heightMap{
   height: 400px;
-}
-
-.h-\[60px\]{
-  height: 60px;
-}
-
-.h-\[70px\]{
-  height: 70px;
 }
 
 .w-full{
@@ -623,10 +615,6 @@ video {
 
 .border-l-2{
   border-left-width: 2px;
-}
-
-.border-none{
-  border-style: none;
 }
 
 .border-gray-300{
@@ -820,6 +808,14 @@ body{
 }
 
 @media (min-width: 1024px){
+  .lg\:h-\[70px\]{
+    height: 70px;
+  }
+
+  .lg\:border-l-2{
+    border-left-width: 2px;
+  }
+
   .lg\:text-start{
     text-align: start;
   }
