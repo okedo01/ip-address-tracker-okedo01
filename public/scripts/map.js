@@ -13,23 +13,23 @@ const updateUI = (data) => {
 
     // update the details
     details.innerHTML = `
-        <div class="ip">
-            <p>IP Address</p>
+        <div class="ip mb-2 px-7 text-center lg:text-start">
+            <p class="uppercase">IP Address</p>
             <span class="text">${addressDetails.ip}</span>
         </div>
 
-        <div class="location px-7 border-l-2 border-gray-300">
-            <p>Location</p>
-            <span class="text">${addressDetails.location.city}, ${addressDetails.location.region}</span>
+        <div class="location mb-3 px-7 lg:h-[70px] lg:border-l-2 text-center lg:text-start">
+            <p class="uppercase">Location</p>
+            <span class="text">${addressDetails.location.country}, ${addressDetails.location.region}</span>
         </div>
 
-        <div class="timezone px-7 border-l-2 border-gray-300">
-            <p>Timezone</p>
-            <span class="text">UTC${addressDetails.location.timezone} <!-- add offset value dynamically using the API --></span>
+        <div class="timezone px-7 lg:h-[70px] lg:border-l-2 text-center lg:text-start">
+            <p class="uppercase">Timezone</p>
+            <span class="text">UTC${addressDetails.location.timezone}</span>
         </div>
 
-        <div class="isp px-7 border-l-2 border-gray-300">
-            <p>ISP</p>
+        <div class="isp px-7 lg:h-[70px] lg:border-l-2 text-center lg:text-start">
+            <p class="uppercase">isp</p>
             <span class="text">${addressDetails.isp}</span>
         </div>
     `;

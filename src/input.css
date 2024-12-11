@@ -11,13 +11,13 @@ body {
     @apply text-primary text-lg font-bold;
 }
 .wrapper {
-    @apply grid grid-cols-1 justify-items-center absolute top-48 sm:top-56 md:top-60 max-w-72 w-full sm:max-w-lg md:max-w-xl lg:max-w-4xl py-7 pl-5 rounded-lg bg-white text-primary text-sm z-50;
+    @apply grid grid-cols-1 absolute top-48 sm:top-56 md:top-60 max-w-72 w-full sm:max-w-lg md:max-w-xl lg:max-w-4xl py-7 pl-3 rounded-lg bg-white text-primary text-sm z-50;
 }
 .responsive {
     @apply sm:grid-cols-2 lg:grid-cols-4;
 }
 .search-input {
-    @apply w-64 sm:w-80 lg:w-wInput bg-white text-secondary p-3 sm:p-4 rounded-l-lg text-footerText lg:text-lg font-semibold outline-none;
+    @apply w-64 sm:w-80 lg:w-wInput bg-white text-secondary p-3 sm:p-4 rounded-l-lg text-footerText lg:text-lg font-semibold outline-none cursor-pointer;
 }
 .icon-arrow {
     @apply p-4 sm:px-6 sm:py-5 lg:py-6 bg-black rounded-r-2xl cursor-pointer;
