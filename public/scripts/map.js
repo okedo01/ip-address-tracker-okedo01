@@ -1,6 +1,7 @@
 const userInput = document.querySelector('form');
 const arrow = document.querySelector('.icon-arrow');
 const details = document.querySelector('.wrapper');
+const tracker = new Tracker();
 
 const updateUI = (data) => {
     const addressDetails = data.addressDetails;
@@ -50,15 +51,6 @@ const updateUI = (data) => {
     }
 }
 
-const updateAddress = async (address) => {
-    const addressDetails = await getData(address);
-
-    return {
-        addressDetails: addressDetails
-    };
-    
-}
-
 userInput.addEventListener('submit', event => {
     event.preventDefault();
 
@@ -69,9 +61,9 @@ userInput.addEventListener('submit', event => {
     // localStorage
     localStorage.setItem("address", address);
     
-    updateAddress(address)
-    // .then(data => updateUI(data))
-    .then(data => console.log(data))
+    tracker.updateAddress(address)
+    .then(data => updateUI(data))
+    // .then(data => console.log(data))
     .catch(error => alert(error.message));
 })
 
@@ -87,7 +79,7 @@ L.marker([51.5, -0.09]).addTo(map)
 
 // checking if the address is located in localStorage
 if(localStorage.getItem("address")) {
-    updateAddress(localStorage.getItem("address"))
+    tracker.updateAddress(localStorage.getItem("address"))
         .then(data => updateUI(data))
         .catch(error => console.log(error.message));
 } else {
