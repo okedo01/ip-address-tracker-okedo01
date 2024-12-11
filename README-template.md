@@ -18,7 +18,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution URL](http://127.0.0.1:5500/public/index.html?address=netlify.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [My live site URL](https://ip-address-tracker-okedo01.netlify.app/)
 
 ### Built with
 
