@@ -3,6 +3,11 @@ const arrow = document.querySelector('.icon-arrow');
 const details = document.querySelector('.wrapper');
 const tracker = new Tracker();
 
+const isDomain = (input) => {
+    const domainPattern = /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return domainPattern.test(input);
+};
+
 const updateUI = (data) => {
     const addressDetails = data.addressDetails;
 
@@ -29,22 +34,16 @@ const updateUI = (data) => {
         </div>
     `;
 
-    // update the map
-    // Assume addressDetails is already defined and includes location details
     const latitude = addressDetails.location.lat;
     const longitude = addressDetails.location.lng;
 
-    // Set the map view to the new coordinates
     map.setView([latitude, longitude], 13);
 
-    // Check if the marker has already been created
     if (!window.marker) {
-        // Initialize the marker and add it to the map
         window.marker = L.marker([latitude, longitude]).addTo(map)
             .bindPopup(`Location: ${addressDetails.location.city}, ${addressDetails.location.region}`)
             .openPopup();
     } else {
-        // Update the position of the existing marker
         window.marker.setLatLng([latitude, longitude])
             .bindPopup(`Location: ${addressDetails.location.city}, ${addressDetails.location.region}`)
             .openPopup();
@@ -55,15 +54,14 @@ userInput.addEventListener('submit', event => {
     event.preventDefault();
 
     // get user input
-    const address = userInput.address.value.trim();
+    const input = userInput.address.value.trim();
     userInput.reset();
 
     // localStorage
-    localStorage.setItem("address", address);
+    localStorage.setItem("input", input);
     
-    tracker.updateAddress(address)
+    tracker.updateAddress(input)
     .then(data => updateUI(data))
-    // .then(data => console.log(data))
     .catch(error => alert(error.message));
 })
 
@@ -78,8 +76,8 @@ L.marker([51.5, -0.09]).addTo(map)
     .openPopup();
 
 // checking if the address is located in localStorage
-if(localStorage.getItem("address")) {
-    tracker.updateAddress(localStorage.getItem("address"))
+if(localStorage.getItem("input")) {
+    tracker.updateAddress(localStorage.getItem("input"))
         .then(data => updateUI(data))
         .catch(error => console.log(error.message));
 } else {
